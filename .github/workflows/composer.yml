@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - master # build master branch only
+
 jobs:
   download:
     runs-on: ubuntu-latest
@@ -18,9 +19,10 @@ jobs:
       run: |
         npm install composer
         composer install
-
+        
+        
     - name: Deploy
-      uses: peaceiris/actions-gh-page[email protected]
+      uses: peaceiris/[email protected]
       with:
         github_token: ${{ secrets.TOKEN }}
         publish_dir: ./
